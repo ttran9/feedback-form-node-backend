@@ -12,6 +12,11 @@
 
 - Notes:
 
+  - Limitations (issues to fix):
+
+    - for my test suite my current limitation is that I'm running all the tests. for me to properly sync my database I am currently needing to run all my tests because in my auth.js test suite I am initializing the app and emiting an event listener.
+      - As of 4/25/2022 I'm looking into a variety of resources/examples online to see how others have dealt with this issue.
+
   - Configuration Related Content
 
     - For running the application:
@@ -46,4 +51,6 @@
       - Command for looking up the ip address of the container
         - docker exec -it nodeBptestDB hostname -i
           - Take the value here and assign it to "DB_TEST_HOST" inside of the .env file.
+      - mysql -h 172.17.0.1 -u root -p
+        - after the above command enter in your password that matches what you have in your .env file.
     - Note: This creates a root user but for production it is recommended to not provide the backend app root level permissions.
