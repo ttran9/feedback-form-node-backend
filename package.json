@@ -1,0 +1,41 @@
+{
+  "name": "march_2022_node_express_boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --recursive \"test/\" --timeout 5000 --exit",
+    "testFeedback": "mocha --recursive \"test/controllers/feedback.js\" --timeout 5000 --exit",
+    "start": "nodemon app.js",
+    "startTest": "NODE_ENV=test nodemon app.js",
+    "seedData": "npx sequelize-cli db:seed:all --env test ",
+    "removeSeedData": "npx sequelize-cli db:seed:undo:all --env test ",
+    "migrateData": "npx sequelize-cli db:migrate --env test ",
+    "removeMigrations": "npx sequelize-cli db:migrate:undo:all --env test ",
+    "addData": "npx sequelize-cli db:migrate --env test && npx sequelize-cli db:seed:all --env test",
+    "removeData": "npx sequelize-cli db:seed:undo:all --env test && npx sequelize-cli db:migrate:undo:all --env test",
+    "reseedData": "npx sequelize-cli db:seed:undo:all --env test && npx sequelize-cli db:seed:all --env test "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "dotenv": "^16.0.0",
+    "mocha": "^9.2.2",
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0",
+    "winston": "^3.6.0"
+  }
+}
