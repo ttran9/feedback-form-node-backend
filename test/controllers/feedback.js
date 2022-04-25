@@ -19,18 +19,12 @@ const {
   AMBER_EMAIL,
 } = require("../../util/constants");
 
-// const app = require("../../app");
-let app;
+const app = require("../../app");
+// let app;
 
 chai.use(chaiHttp);
 
 describe("Feedback Endpoints Test Suite", () => {
-  before((done) => {
-    app = require("../../app");
-    app.on("listening", () => {
-      done();
-    });
-  });
   const loginHelper = async (email, password) => {
     // the login endpoint was tested for so I will not be making assertions and testing it in this suite.
     return await chai.request(app).post(`${apiPrefix}/auth/login`).send({
